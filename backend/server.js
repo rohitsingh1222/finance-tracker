@@ -7,9 +7,14 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+  origin: [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://rohitsingh1222.github.io/finance-tracker/"  // <-- add your live frontend URL
+  ],
   credentials: true
 }));
+
 
 app.use(express.json());
 
@@ -17,7 +22,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.send("✅ API working"));
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/finance";
+const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => {
