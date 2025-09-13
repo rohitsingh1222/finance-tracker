@@ -1,7 +1,6 @@
 import axios from "axios";
-
 const API = axios.create({
-  baseURL: "http://localhost:4001/api", // Full backend URL
+  baseURL: process.env.REACT_APP_API_URL, // Full backend URL
 });
 
 // Get all transactions
