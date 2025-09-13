@@ -10,7 +10,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/finance-tracker">
       <App />
       <ToastContainer position="top-right" autoClose={3000} />
     </BrowserRouter>
